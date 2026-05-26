@@ -28,6 +28,8 @@ export default function App() {
   const [project, setProject] = useState('');
   const [client, setClient] = useState('');
   const [deliverables, setDeliverables] = useState(new Set());
+  // briefSelections: { [phaseIdx]: { [groupKey]: string[] } }
+  const [briefSelections, setBriefSelections] = useState({ 0: {}, 1: {}, 2: {}, 3: {} });
 
   const setSel = useCallback((key, val) => {
     setAnswers(prev => ({
@@ -53,7 +55,6 @@ export default function App() {
     });
   };
 
-  // Load handler — restores full project state
   const handleLoad = useCallback((data) => {
     setProject(data.project || '');
     setClient(data.client || '');
@@ -61,14 +62,15 @@ export default function App() {
     setNotes(n => ({ ...n, ...data.notes }));
     setStory(data.story?.length ? data.story : DEFAULT_STORY.map(s => ({ ...s })));
     setDeliverables(data.deliverables instanceof Set ? data.deliverables : new Set(data.deliverables || []));
+    if (data.briefSelections) setBriefSelections(data.briefSelections);
     setCompleted(new Set());
     setPhase(0);
   }, []);
 
-  const ctx = { answers, notes, story, project, client, deliverables };
+  const ctx = { answers, notes, story, project, client, deliverables, briefSelections };
 
   const panels = [
-    <DiagnosticoPanel key={0} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(0)} ctx={ctx} />,
+    <DiagnosticoPanel key={0} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(0)} ctx={ctx} briefSelections={briefSelections} setBriefSelections={setBriefSelections} />,
     <EstrategiaPanel  key={1} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(1)} ctx={ctx} />,
     <DirecaoPanel     key={2} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(2)} ctx={ctx} />,
     <StoryboardPanel  key={3} story={story} setStory={setStory} notes={notes} setNotes={setNotes} onAdvance={() => advance(3)} ctx={ctx} />,
@@ -87,30 +89,14 @@ export default function App() {
               <div className={styles.logoSub}>Creative Direction & Visual Strategy</div>
             </div>
           </div>
-
           <div className={styles.centerInputs}>
-            <input
-              className={styles.metaInput}
-              placeholder="Projeto..."
-              value={project}
-              onChange={e => setProject(e.target.value)}
-            />
-            <input
-              className={styles.metaInput}
-              placeholder="Cliente..."
-              value={client}
-              onChange={e => setClient(e.target.value)}
-            />
+            <input className={styles.metaInput} placeholder="Projeto..." value={project} onChange={e => setProject(e.target.value)} />
+            <input className={styles.metaInput} placeholder="Cliente..." value={client} onChange={e => setClient(e.target.value)} />
           </div>
-
           <SaveLoad
-            project={project}
-            client={client}
-            answers={answers}
-            notes={notes}
-            story={story}
-            deliverables={deliverables}
-            onLoad={handleLoad}
+            project={project} client={client} answers={answers}
+            notes={notes} story={story} deliverables={deliverables}
+            briefSelections={briefSelections} onLoad={handleLoad}
           />
         </div>
       </header>
@@ -118,9 +104,7 @@ export default function App() {
       <PhaseNav current={phase} completed={completed} onChange={setPhase} />
 
       <main className={styles.main}>
-        <div className={styles.content}>
-          {panels[phase]}
-        </div>
+        <div className={styles.content}>{panels[phase]}</div>
       </main>
     </div>
   );

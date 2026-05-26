@@ -1,9 +1,9 @@
 export const SCENE_TYPES = {
   T: { label: 'Localização',  color: 'purple' },
   P: { label: 'Aspiração',    color: 'teal'   },
-  E: { label: 'Experiência', color: 'coral'  },
-  Pr:{ label: 'Produto',     color: 'blue'   },
-  C: { label: 'Convite',     color: 'green'  },
+  E: { label: 'Experiência',  color: 'coral'  },
+  Pr:{ label: 'Produto',      color: 'blue'   },
+  C: { label: 'Convite',      color: 'green'  },
 };
 
 export const SCENE_OPTIONS = {
@@ -15,15 +15,145 @@ export const SCENE_OPTIONS = {
 };
 
 export const CAMERA_FNS = {
-  'Imagem aérea':              'Localização / escala / raridade / exclusividade',
-  'Fachada hero shot':         'Identidade / arquitetura / presença / diferenciação',
+  'Imagem aérea':               'Localização / escala / raridade / exclusividade',
+  'Fachada hero shot':          'Identidade / arquitetura / presença / diferenciação',
   'Close de material / detalhe':'Sofisticação / qualidade / sensorialidade / valor',
-  'Interior principal':        'Pertencimento / cotidiano / desejo / estilo de vida',
-  'Paisagem / natureza':       'Pausa / contemplação / atmosfera / respiro narrativo',
-  'Implantação / masterplan':  'Clareza comercial / segurança de decisão',
-  'Chegada / acesso':          'Expectativa / privacidade / ritual de entrada',
+  'Interior principal':         'Pertencimento / cotidiano / desejo / estilo de vida',
+  'Paisagem / natureza':        'Pausa / contemplação / atmosfera / respiro narrativo',
+  'Implantação / masterplan':   'Clareza comercial / segurança de decisão',
+  'Chegada / acesso':           'Expectativa / privacidade / ritual de entrada',
 };
 
+// ─── PHASE BRIEFS ────────────────────────────────────────────────────────────
+// Each phase can have a `brief` object with:
+//   intro:    short paragraph shown collapsed
+//   objetivo: one-liner
+//   regra:    closing rule of the phase
+//   groups:   array of { pergunta, exemplos: string[] }  — selectable items
+//   saida:    { label, exemplos: string[] }               — tese examples
+
+export const PHASE_BRIEFS = {
+  0: {
+    intro: 'O diagnóstico é a etapa em que o PW LABs atua como consultoria criativa. Antes de qualquer decisão visual, é necessário entender o contexto do projeto, o objetivo comercial, o público e o valor que precisa ser comunicado. Nesta etapa, o projeto ainda não é uma imagem — ele é uma intenção a ser compreendida.',
+    objetivo: 'Entender o projeto antes de representá-lo.',
+    regra: 'Nenhuma cena deve ser definida antes da tese narrativa.',
+    groups: [
+      {
+        pergunta: '1. Qual é o desafio do negócio?',
+        key: 'brief_desafio',
+        exemplos: [
+          'Vender lotes',
+          'Lançar um empreendimento',
+          'Reposicionar um produto',
+          'Apresentar o projeto para investidores',
+          'Gerar desejo antes do lançamento',
+          'Apoiar uma campanha comercial',
+          'Diferenciar o projeto da concorrência',
+          'Apresentar arquitetura para clientes finais',
+          'Criar uma narrativa institucional para a marca',
+        ],
+      },
+      {
+        pergunta: '2. Qual é a intenção do projeto?',
+        key: 'brief_intencao',
+        exemplos: [
+          'Ser um refúgio natural',
+          'Ser um ícone urbano',
+          'Ser um produto familiar',
+          'Ser um destino de wellness',
+          'Ser uma experiência de resort',
+          'Ser uma residência de alto padrão',
+          'Ser um ativo de investimento',
+          'Ser um empreendimento de marca forte',
+          'Ser uma nova forma de viver determinada localização',
+        ],
+      },
+      {
+        pergunta: '3. Quem é o público?',
+        key: 'brief_publico',
+        exemplos: [
+          'Famílias',
+          'Investidores',
+          'Clientes de alta renda',
+          'Público internacional',
+          'Compradores de segunda residência',
+          'Público corporativo',
+          'Mercado de luxo',
+          'Compradores sensíveis à arquitetura',
+          'Compradores orientados por lifestyle',
+        ],
+      },
+      {
+        pergunta: '4. Qual é o momento comercial?',
+        key: 'brief_momento',
+        exemplos: [
+          'Estudo de viabilidade',
+          'Pré-lançamento',
+          'Lançamento',
+          'Vendas',
+          'Reposicionamento',
+          'Apresentação para investidores',
+          'Concorrência',
+          'Material de campanha',
+          'Reforço institucional',
+          'Apresentação para cliente estratégico',
+        ],
+      },
+      {
+        pergunta: '5. Qual valor precisa ser comunicado?',
+        key: 'brief_valor',
+        exemplos: [
+          'Exclusividade',
+          'Bem-estar',
+          'Localização',
+          'Arquitetura',
+          'Conveniência',
+          'Raridade',
+          'Sofisticação',
+          'Natureza',
+          'Inovação',
+          'Segurança',
+          'Pertencimento',
+          'Privacidade',
+          'Estilo de vida',
+          'Qualidade construtiva',
+          'Marca',
+          'Experiência',
+        ],
+      },
+      {
+        pergunta: '6. Quais são os benchmarks e concorrentes?',
+        key: 'brief_benchmark',
+        exemplos: [
+          'O mercado já está comunicando isso',
+          'O projeto precisa superar o padrão atual',
+          'A linguagem visual atual está saturada',
+          'Precisa parecer mais sofisticado',
+          'Precisa parecer mais natural',
+          'Precisa parecer mais urbano',
+          'Precisa parecer mais institucional',
+          'Precisa parecer mais aspiracional',
+          'Referências elevam a percepção de valor',
+        ],
+      },
+    ],
+    saida: {
+      label: 'Tese narrativa — exemplos de saída desta etapa',
+      exemplos: [
+        '"Este projeto não deve ser comunicado como um condomínio, mas como um território de bem-estar, natureza e pertencimento."',
+        '"Este empreendimento não deve ser vendido pela metragem, mas pela sensação de viver em uma casa pronta, com arquitetura autoral e experiência de resort."',
+        '"Este projeto precisa ser percebido como um ativo raro, com alto valor de marca, desejo imediato e forte diferenciação no mercado."',
+        '"Este vídeo deve transformar a paisagem, a arquitetura e a experiência de morar em uma narrativa de exclusividade e vida plena."',
+      ],
+    },
+  },
+  // Phases 1, 2, 3 — briefs to be added
+  1: null,
+  2: null,
+  3: null,
+};
+
+// ─── PHASES ──────────────────────────────────────────────────────────────────
 export const PHASES = [
   {
     id: 0,
@@ -44,7 +174,7 @@ export const PHASES = [
       '8. ALERTAS — o que ainda precisa ser confirmado.',
       '9. PRÓXIMOS PASSOS → ESTRATÉGIA',
     ],
-    tese: (s) => `Estamos falando de um projeto com posicionamento "${s.d_pos||'—'}", para um público "${s.d_pub||'—'}", com decisão mais "${s.d_dec||'—'}", e o valor central é "${s.d_val||'—'}'.`,
+    tese: (s) => `Estamos falando de um projeto com posicionamento "${s.d_pos||'—'}", para um público "${s.d_pub||'—'}", com decisão mais "${s.d_dec||'—'}", e o valor central é "${s.d_val||'—'}".`,
     teseKeys: ['d_pos','d_pub','d_dec','d_val'],
     blocks: [
       {
