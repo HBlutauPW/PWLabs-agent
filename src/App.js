@@ -4,6 +4,7 @@ import PhaseNav from './components/PhaseNav';
 import DiagnosticoPanel from './components/DiagnosticoPanel';
 import EstrategiaPanel from './components/EstrategiaPanel';
 import DirecaoPanel from './components/DirecaoPanel';
+import ProducaoPanel from './components/ProducaoPanel';
 import StoryboardPanel from './components/StoryboardPanel';
 import RelatorioPanel from './components/RelatorioPanel';
 import SaveLoad from './components/SaveLoad';
@@ -23,13 +24,12 @@ export default function App() {
   const [phase, setPhase] = useState(0);
   const [completed, setCompleted] = useState(new Set());
   const [answers, setAnswers] = useState(initialAnswers);
-  const [notes, setNotes] = useState({ 0: '', 1: '', 2: '', 3: '', 4: '' });
+  const [notes, setNotes] = useState({ 0:'', 1:'', 2:'', 3:'', 4:'', 5:'' });
   const [story, setStory] = useState(DEFAULT_STORY.map(s => ({ ...s })));
   const [project, setProject] = useState('');
   const [client, setClient] = useState('');
   const [deliverables, setDeliverables] = useState(new Set());
-  // briefSelections: { [phaseIdx]: { [groupKey]: string[] } }
-  const [briefSelections, setBriefSelections] = useState({ 0: {}, 1: {}, 2: {}, 3: {} });
+  const [briefSelections, setBriefSelections] = useState({ 0:{}, 1:{}, 2:{}, 3:{}, 4:{}, 5:{} });
 
   const setSel = useCallback((key, val) => {
     setAnswers(prev => ({
@@ -44,7 +44,7 @@ export default function App() {
 
   const advance = (from) => {
     setCompleted(prev => new Set([...prev, from]));
-    setPhase(Math.min(from + 1, 4));
+    setPhase(Math.min(from + 1, 5));
   };
 
   const toggleDeliverable = (d) => {
@@ -69,12 +69,15 @@ export default function App() {
 
   const ctx = { answers, notes, story, project, client, deliverables, briefSelections };
 
+  const shared = { briefSelections, setBriefSelections };
+
   const panels = [
-    <DiagnosticoPanel key={0} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(0)} ctx={ctx} briefSelections={briefSelections} setBriefSelections={setBriefSelections} />,
-    <EstrategiaPanel  key={1} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(1)} ctx={ctx} />,
-    <DirecaoPanel     key={2} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(2)} ctx={ctx} />,
-    <StoryboardPanel  key={3} story={story} setStory={setStory} notes={notes} setNotes={setNotes} onAdvance={() => advance(3)} ctx={ctx} />,
-    <RelatorioPanel   key={4} deliverables={deliverables} toggleDeliverable={toggleDeliverable} notes={notes} setNotes={setNotes} ctx={ctx} />,
+    <DiagnosticoPanel key={0} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(0)} ctx={ctx} {...shared} />,
+    <EstrategiaPanel  key={1} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(1)} ctx={ctx} {...shared} />,
+    <DirecaoPanel     key={2} answers={answers} setSel={setSel} setNota={setNota} notes={notes} setNotes={setNotes} onAdvance={() => advance(2)} ctx={ctx} {...shared} />,
+    <ProducaoPanel    key={3} notes={notes} setNotes={setNotes} onAdvance={() => advance(3)} {...shared} />,
+    <StoryboardPanel  key={4} story={story} setStory={setStory} notes={notes} setNotes={setNotes} onAdvance={() => advance(4)} ctx={ctx} {...shared} />,
+    <RelatorioPanel   key={5} deliverables={deliverables} toggleDeliverable={toggleDeliverable} notes={notes} setNotes={setNotes} ctx={ctx} {...shared} />,
   ];
 
   return (
