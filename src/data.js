@@ -30,14 +30,12 @@ export const PHASES = [
     eyebrow: 'Fase 1 — Anamnese estratégica',
     title: 'Diagnóstico',
     quote: '"Antes de falarmos de imagem, precisamos entender como esse projeto precisa ser percebido."
-Função da etapa
-O diagnóstico é a etapa em que o PW LABs atua como consultoria criativa.
-Antes de qualquer decisão visual, é necessário entender o contexto do projeto, o objetivo comercial, o público e o valor que precisa ser comunicado.
-Nesta etapa, o projeto ainda não é uma imagem. Ele é uma intenção a ser compreendida.
-Objetivo
-Entender o projeto antes de representá-lo',
-
-
+		Função da etapa:
+		O diagnóstico é a etapa em que o PW LABs atua como consultoria criativa.
+		Antes de qualquer decisão visual, é necessário entender o contexto do projeto, o objetivo comercial, o público e o valor que precisa ser comunicado.
+		Nesta etapa, o projeto ainda não é uma imagem. Ele é uma intenção a ser compreendida.
+		Objetivo:
+		Entender o projeto antes de representá-lo',
     color: 'purple',
     reportLabel: 'RELATÓRIO DE DIAGNÓSTICO ESTRATÉGICO',
     reportQuote: 'Antes de falarmos de imagem, queria entender como esse projeto precisa ser percebido.',
