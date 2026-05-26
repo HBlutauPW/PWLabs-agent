@@ -24,15 +24,11 @@ export const CAMERA_FNS = {
   'Chegada / acesso':           'Expectativa / privacidade / ritual de entrada',
 };
 
-// ─── PHASE BRIEFS ────────────────────────────────────────────────────────────
-// Each phase can have a `brief` object with:
-//   intro:    short paragraph shown collapsed
-//   objetivo: one-liner
-//   regra:    closing rule of the phase
-//   groups:   array of { pergunta, exemplos: string[] }  — selectable items
-//   saida:    { label, exemplos: string[] }               — tese examples
+// ─── PHASE BRIEFS ─────────────────────────────────────────────────────────────
 
 export const PHASE_BRIEFS = {
+
+  // ── FASE 1 — DIAGNÓSTICO ──────────────────────────────────────────────────
   0: {
     intro: 'O diagnóstico é a etapa em que o PW LABs atua como consultoria criativa. Antes de qualquer decisão visual, é necessário entender o contexto do projeto, o objetivo comercial, o público e o valor que precisa ser comunicado. Nesta etapa, o projeto ainda não é uma imagem — ele é uma intenção a ser compreendida.',
     objetivo: 'Entender o projeto antes de representá-lo.',
@@ -42,13 +38,9 @@ export const PHASE_BRIEFS = {
         pergunta: '1. Qual é o desafio do negócio?',
         key: 'brief_desafio',
         exemplos: [
-          'Vender lotes',
-          'Lançar um empreendimento',
-          'Reposicionar um produto',
-          'Apresentar o projeto para investidores',
-          'Gerar desejo antes do lançamento',
-          'Apoiar uma campanha comercial',
-          'Diferenciar o projeto da concorrência',
+          'Vender lotes','Lançar um empreendimento','Reposicionar um produto',
+          'Apresentar o projeto para investidores','Gerar desejo antes do lançamento',
+          'Apoiar uma campanha comercial','Diferenciar o projeto da concorrência',
           'Apresentar arquitetura para clientes finais',
           'Criar uma narrativa institucional para a marca',
         ],
@@ -57,13 +49,9 @@ export const PHASE_BRIEFS = {
         pergunta: '2. Qual é a intenção do projeto?',
         key: 'brief_intencao',
         exemplos: [
-          'Ser um refúgio natural',
-          'Ser um ícone urbano',
-          'Ser um produto familiar',
-          'Ser um destino de wellness',
-          'Ser uma experiência de resort',
-          'Ser uma residência de alto padrão',
-          'Ser um ativo de investimento',
+          'Ser um refúgio natural','Ser um ícone urbano','Ser um produto familiar',
+          'Ser um destino de wellness','Ser uma experiência de resort',
+          'Ser uma residência de alto padrão','Ser um ativo de investimento',
           'Ser um empreendimento de marca forte',
           'Ser uma nova forma de viver determinada localização',
         ],
@@ -72,30 +60,18 @@ export const PHASE_BRIEFS = {
         pergunta: '3. Quem é o público?',
         key: 'brief_publico',
         exemplos: [
-          'Famílias',
-          'Investidores',
-          'Clientes de alta renda',
-          'Público internacional',
-          'Compradores de segunda residência',
-          'Público corporativo',
-          'Mercado de luxo',
-          'Compradores sensíveis à arquitetura',
-          'Compradores orientados por lifestyle',
+          'Famílias','Investidores','Clientes de alta renda','Público internacional',
+          'Compradores de segunda residência','Público corporativo','Mercado de luxo',
+          'Compradores sensíveis à arquitetura','Compradores orientados por lifestyle',
         ],
       },
       {
         pergunta: '4. Qual é o momento comercial?',
         key: 'brief_momento',
         exemplos: [
-          'Estudo de viabilidade',
-          'Pré-lançamento',
-          'Lançamento',
-          'Vendas',
-          'Reposicionamento',
-          'Apresentação para investidores',
-          'Concorrência',
-          'Material de campanha',
-          'Reforço institucional',
+          'Estudo de viabilidade','Pré-lançamento','Lançamento','Vendas',
+          'Reposicionamento','Apresentação para investidores','Concorrência',
+          'Material de campanha','Reforço institucional',
           'Apresentação para cliente estratégico',
         ],
       },
@@ -103,36 +79,20 @@ export const PHASE_BRIEFS = {
         pergunta: '5. Qual valor precisa ser comunicado?',
         key: 'brief_valor',
         exemplos: [
-          'Exclusividade',
-          'Bem-estar',
-          'Localização',
-          'Arquitetura',
-          'Conveniência',
-          'Raridade',
-          'Sofisticação',
-          'Natureza',
-          'Inovação',
-          'Segurança',
-          'Pertencimento',
-          'Privacidade',
-          'Estilo de vida',
-          'Qualidade construtiva',
-          'Marca',
-          'Experiência',
+          'Exclusividade','Bem-estar','Localização','Arquitetura','Conveniência',
+          'Raridade','Sofisticação','Natureza','Inovação','Segurança',
+          'Pertencimento','Privacidade','Estilo de vida','Qualidade construtiva',
+          'Marca','Experiência',
         ],
       },
       {
         pergunta: '6. Quais são os benchmarks e concorrentes?',
         key: 'brief_benchmark',
         exemplos: [
-          'O mercado já está comunicando isso',
-          'O projeto precisa superar o padrão atual',
-          'A linguagem visual atual está saturada',
-          'Precisa parecer mais sofisticado',
-          'Precisa parecer mais natural',
-          'Precisa parecer mais urbano',
-          'Precisa parecer mais institucional',
-          'Precisa parecer mais aspiracional',
+          'O mercado já está comunicando isso','O projeto precisa superar o padrão atual',
+          'A linguagem visual atual está saturada','Precisa parecer mais sofisticado',
+          'Precisa parecer mais natural','Precisa parecer mais urbano',
+          'Precisa parecer mais institucional','Precisa parecer mais aspiracional',
           'Referências elevam a percepção de valor',
         ],
       },
@@ -147,13 +107,312 @@ export const PHASE_BRIEFS = {
       ],
     },
   },
-  // Phases 1, 2, 3 — briefs to be added
-  1: null,
-  2: null,
-  3: null,
+
+  // ── FASE 2 — ESTRATÉGIA ───────────────────────────────────────────────────
+  1: {
+    intro: 'A estratégia transforma o diagnóstico em um sistema de comunicação. Nesta etapa, o PW LABs define como o projeto deve ser percebido pelo público. A estratégia não é ainda a produção do vídeo — ela é a lógica invisível que orienta todas as decisões do filme.',
+    objetivo: 'Definir o código visual, narrativo e emocional do projeto.',
+    regra: 'Toda cena deve ter uma função estratégica clara dentro da narrativa.',
+    groups: [
+      {
+        pergunta: '1. Tom',
+        key: 'brief_tom',
+        exemplos: [
+          'Contemplativo','Sofisticado','Emocional','Urbano','Institucional',
+          'Cinematográfico','Natural','Resort','Artístico','Familiar',
+          'Lifestyle','Silencioso','Aspiracional',
+        ],
+      },
+      {
+        pergunta: '2. Ritmo',
+        key: 'brief_ritmo',
+        exemplos: [
+          'Lento e contemplativo','Dinâmico e aspiracional','Sensorial e elegante',
+          'Institucional e objetivo','Emocional e crescente',
+          'Preciso e sofisticado','Cinematográfico e imersivo',
+        ],
+      },
+      {
+        pergunta: '3. Linguagem',
+        key: 'brief_linguagem',
+        exemplos: [
+          'Filme editorial','Campanha de marca','Filme manifesto',
+          'Arquitetura cinematográfica','Hospitality film','Luxury real estate',
+          'Narrativa documental','Apresentação comercial premium',
+          'Filme institucional','Fashion film aplicado à arquitetura',
+        ],
+      },
+      {
+        pergunta: '4. Sensação desejada',
+        key: 'brief_sensacao',
+        exemplos: [
+          'Silêncio','Desejo','Movimento','Acolhimento','Poder','Exclusividade',
+          'Leveza','Pertencimento','Confiança','Contemplação','Privacidade',
+          'Sofisticação','Bem-estar','Descoberta',
+        ],
+      },
+      {
+        pergunta: '5. Valor percebido',
+        key: 'brief_valorpercebido',
+        exemplos: [
+          'Raridade','Sofisticação','Privacidade','Natureza','Conveniência',
+          'Arquitetura','Marca','Experiência','Patrimônio','Investimento',
+          'Lifestyle','Exclusividade',
+        ],
+      },
+      {
+        pergunta: '6. Sequência estratégica',
+        key: 'brief_sequencia',
+        exemplos: [
+          'Localização → Aspiração → Experiência → Produto → Convite',
+          'Arquitetura → Experiência → Produto → Marca',
+          'Abertura emocional → Produto → Convite',
+          'Território → Promessa → Experiência → Produto → Convite',
+        ],
+      },
+    ],
+    saida: {
+      label: 'A estrutura mais forte para vídeos PW LABs',
+      exemplos: [
+        '"LOCALIZAÇÃO → ASPIRAÇÃO → EXPERIÊNCIA → PRODUTO → CONVITE — essa ordem constrói percepção e desejo antes de apresentar o produto."',
+        '"A diferença entre organizar cenas e construir uma narrativa: a primeira estrutura gera desejo; a segunda apenas organiza imagens."',
+      ],
+    },
+  },
+
+  // ── FASE 3 — DIREÇÃO ──────────────────────────────────────────────────────
+  2: {
+    intro: 'A direção traduz a estratégia em linguagem visual, audiovisual e narrativa. Nesta etapa, o PW LABs atua como direção criativa. A pergunta principal é: "Como vamos fazer o espectador sentir isso?"',
+    objetivo: 'Transformar estratégia em conceito visual e roteiro audiovisual.',
+    regra: 'Se a cena não comunica valor, ela deve ser repensada ou removida.',
+    groups: [
+      {
+        pergunta: '1. Mood e atmosfera',
+        key: 'brief_mood',
+        exemplos: [
+          'Refúgio natural — serra, silêncio, luz suave, vegetação, ritmo lento',
+          'Luxo urbano — fachada icônica, skyline, noite, reflexos, ritmo preciso',
+          'Hospitality / resort — chegada, piscina, gastronomia, serviço, permanência',
+          'Residencial familiar premium — rotina, conforto, luz natural, acolhimento',
+          'Produto institucional / investidor — escala, masterplan, clareza, credibilidade',
+        ],
+      },
+      {
+        pergunta: '2. Referências visuais',
+        key: 'brief_referencias',
+        exemplos: [
+          'Cinema','Fotografia editorial','Fotografia de arquitetura',
+          'Campanhas de luxo','Hospitality','Arte','Design','Moda',
+          'Marcas premium','Filmes institucionais',
+          'Real estate internacional','Estúdios de visualização de alto padrão',
+        ],
+      },
+      {
+        pergunta: '3. Tipos de cena e função narrativa',
+        key: 'brief_cameras',
+        exemplos: [
+          'Imagem aérea — território, escala, raridade, exclusividade',
+          'Travelling de chegada — acesso, expectativa, privacidade, ritual de entrada',
+          'Fachada hero shot — identidade, arquitetura, presença, diferenciação',
+          'Close de material — sofisticação, detalhe, qualidade, sensorialidade',
+          'Interior com vida — pertencimento, cotidiano, desejo, estilo de vida',
+          'Cena de experiência — gastronomia, spa, esporte, bem-estar, memória',
+          'Cena de paisagem — pausa, contemplação, silêncio, respiro narrativo',
+          'Cena de produto — clareza comercial, segurança de decisão',
+        ],
+      },
+      {
+        pergunta: '4. Storytelling — definições',
+        key: 'brief_storytelling',
+        exemplos: [
+          'Abertura definida','Desenvolvimento planejado','Clímax emocional',
+          'Transição para o produto','Fechamento com convite',
+          'Locução definida','Textos em tela','Música e direção sonora',
+          'Ritmo e duração','Entregáveis mapeados',
+        ],
+      },
+    ],
+    saida: {
+      label: 'Saída esperada desta etapa',
+      exemplos: [
+        '"Conceito visual definido + estrutura de roteiro + lista de cenas com intenção + moodboard + referências + direção de câmera + direção de arte + estratégia de entrega."',
+        '"A referência não deve ser copiada — ela deve orientar qualidade visual, atmosfera, iluminação, enquadramento, ritmo e grau de sofisticação."',
+      ],
+    },
+  },
+
+  // ── FASE 4 — PRODUÇÃO ────────────────────────────────────────────────────
+  3: {
+    intro: 'A produção constrói as cenas como peças de comunicação. O PW LABs combina base técnica, direção criativa, inteligência artificial, composição, finalização e pós-produção. A produção não deve ser aleatória — ela deve ser guiada pelo diagnóstico, pela estratégia e pela direção.',
+    objetivo: 'Construir imagens, cenas e sequências que materializam a narrativa definida.',
+    regra: 'Revisão não é gosto pessoal. Revisão é alinhamento com estratégia.',
+    groups: [
+      {
+        pergunta: '1. Base técnica disponível',
+        key: 'brief_base',
+        exemplos: [
+          'Modelo 3D','Plantas','Masterplan','Cortes','Fachadas','Croquis',
+          'Implantação','Imagens aéreas','Fotos de contexto','Google location',
+          'Referências visuais','Moodboard','Estudo de câmera','Materiais',
+          'Imagens de arquitetura','Imagens de interiores',
+        ],
+      },
+      {
+        pergunta: '2. Composição visual — critérios',
+        key: 'brief_composicao',
+        exemplos: [
+          'Enquadramento','Proporção','Profundidade','Hierarquia visual',
+          'Ponto focal','Luz','Atmosfera','Leitura comercial',
+          'Clareza arquitetônica','Intensidade emocional',
+        ],
+      },
+      {
+        pergunta: '3. AI generation + refinement',
+        key: 'brief_ai',
+        exemplos: [
+          'Atmosfera','Vegetação','Pessoas','Céu','Entorno','Iluminação',
+          'Decoração','Objetos','Lifestyle','Materiais','Texturas',
+          'Variações de cena','Refinamento','Upscale',
+          'Correção de realismo','Detalhamento visual',
+        ],
+      },
+      {
+        pergunta: '4. Iterações — critérios de revisão',
+        key: 'brief_revisao',
+        exemplos: [
+          'A cena está mais premium?','O valor do projeto está mais claro?',
+          'A atmosfera está correta?','A arquitetura foi preservada?',
+          'A imagem parece fotografia ou CGI?','A composição está forte?',
+          'O olhar do espectador está sendo conduzido?',
+          'A cena comunica desejo ou apenas informação?',
+          'A cena está coerente com o mood definido?',
+          'A cena se conecta com a sequência do filme?',
+        ],
+      },
+      {
+        pergunta: '5. Finalização fine-art',
+        key: 'brief_finalizacao',
+        exemplos: [
+          'Cor e contraste','Textura e nitidez','Profundidade de campo',
+          'Luz e atmosfera','Integração de elementos','Correção de erros',
+          'Refinamento de materiais','Tratamento de vegetação','Pessoas',
+          'Pós-produção','Upscale','Fechamento cinematográfico',
+        ],
+      },
+    ],
+    saida: {
+      label: 'Regras fundamentais da produção',
+      exemplos: [
+        '"A base técnica deve preservar a arquitetura e servir à narrativa — não deve limitar a ambição visual do filme."',
+        '"A AI não define a narrativa. A AI executa, testa, amplia e refina decisões de direção."',
+        '"A finalização deve elevar a percepção de valor sem alterar a intenção arquitetônica."',
+      ],
+    },
+  },
+
+  // ── FASE 5 — STORYBOARD ──────────────────────────────────────────────────
+  4: {
+    intro: 'A estrutura de storytelling do PW LABs se apoia em três referências: AIDA (Atenção, Interesse, Desejo e Ação), Jornada emocional (Descoberta, aproximação, identificação, desejo e decisão) e Storytelling clássico (Contexto, tensão, transformação e resolução). Adaptado para arquitetura e luxo, isso se traduz em: TERRITÓRIO → PROMESSA → EXPERIÊNCIA → PRODUTO → CONVITE.',
+    objetivo: 'Construir a sequência narrativa que conduz o espectador da atenção à decisão.',
+    regra: 'A estrutura comercial do vídeo deve ser invisível, mas presente. O filme não empurra uma decisão — ele conduz o espectador até ela.',
+    groups: [
+      {
+        pergunta: 'Território — Por que este lugar importa?',
+        key: 'brief_territorio',
+        exemplos: [
+          'Raridade','Escala','Exclusividade','Natureza','Centralidade',
+          'Conveniência','Pertencimento','Privacidade','Distância do comum',
+          'Valor de localização',
+        ],
+      },
+      {
+        pergunta: 'Promessa — O que este projeto promete entregar?',
+        key: 'brief_promessa',
+        exemplos: [
+          'Viver melhor','Ter mais tempo','Estar mais perto da natureza',
+          'Morar com privacidade','Ter estrutura de resort',
+          'Unir arquitetura e bem-estar','Viver com conveniência',
+          'Investir em um ativo raro','Pertencer a um lugar especial',
+        ],
+      },
+      {
+        pergunta: 'Experiência — Que vida este projeto permite imaginar?',
+        key: 'brief_experiencia',
+        exemplos: [
+          'Desejo','Conforto','Desaceleração','Prazer','Sofisticação',
+          'Rotina elevada','Encontro','Bem-estar','Memória',
+          'Pertencimento','Estilo de vida','Identificação emocional',
+        ],
+      },
+      {
+        pergunta: 'Produto — Como transformar desejo em segurança de decisão?',
+        key: 'brief_produto',
+        exemplos: [
+          'Clareza','Viabilidade','Arquitetura pronta','Implantação definida',
+          'Infraestrutura real','Diferenciais concretos','Qualidade',
+          'Curadoria','Segurança','Credibilidade','Materialização do desejo',
+        ],
+      },
+      {
+        pergunta: 'Convite — Qual é o próximo passo mais elegante?',
+        key: 'brief_convite',
+        exemplos: [
+          'Exclusividade','Acesso','Seleção','Curadoria','Oportunidade',
+          'Convite sem pressão','Continuidade','Desejo consolidado',
+          'Apresentação privada','Decisão elegante',
+        ],
+      },
+    ],
+    saida: {
+      label: 'Estrutura oculta de venda',
+      exemplos: [
+        '"Camada aparente: paisagem → arquitetura → interiores → experiências → produto."',
+        '"Camada estratégica: atenção → interesse → desejo → confiança → ação."',
+        '"Camada emocional: impacto → curiosidade → identificação → aspiração → segurança → vontade de avançar."',
+      ],
+    },
+  },
+
+  // ── FASE 6 — RELATÓRIO ───────────────────────────────────────────────────
+  5: {
+    intro: 'A entrega não é apenas a disponibilização de arquivos. A entrega deve consolidar uma experiência de comunicação. O material final deve ajudar o cliente, o time comercial ou a marca a apresentar o projeto com clareza, desejo e sofisticação.',
+    objetivo: 'Entregar valor, não arquivo.',
+    regra: 'O espectador deve sair do vídeo com entendimento do projeto, percepção de valor, desejo, confiança, memória emocional e vontade de avançar.',
+    groups: [
+      {
+        pergunta: 'Possíveis entregáveis',
+        key: 'brief_entregaveis',
+        exemplos: [
+          'Filme manifesto','Filme de lançamento','Filme comercial','Teaser',
+          'Cortes verticais','Cenas para redes sociais','Filme para stand de vendas',
+          'Filme para investidores','Apresentação audiovisual','Fine-art imagery',
+          'Booklet','Narrativa de apresentação','Peças para campanha',
+          'Assets para mídia paga','Imagens still extraídas do filme',
+          'Pacote de comunicação para marketing',
+        ],
+      },
+      {
+        pergunta: 'O espectador deve sair com',
+        key: 'brief_resultado',
+        exemplos: [
+          'Entendimento do projeto','Percepção de valor','Desejo',
+          'Confiança','Memória emocional','Vontade de avançar',
+        ],
+      },
+    ],
+    saida: {
+      label: 'Síntese do Método PW LABs',
+      exemplos: [
+        '"Diagnosticar o valor do projeto, estruturar sua percepção, dirigir sua linguagem, produzir suas imagens e entregar uma experiência narrativa capaz de transformar arquitetura em desejo, confiança e decisão."',
+        '"O PW LABs não começa mostrando o produto. Ele começa construindo o valor do produto."',
+        '"Os entregáveis deixam de ser apenas uma apresentação visual e passam a ser ferramentas de posicionamento, desejo, percepção de valor e decisão comercial."',
+      ],
+    },
+  },
+
 };
 
-// ─── PHASES ──────────────────────────────────────────────────────────────────
+// ─── PHASES ───────────────────────────────────────────────────────────────────
 export const PHASES = [
   {
     id: 0,
@@ -335,9 +594,10 @@ export const PHASES = [
 ];
 
 export const DELIVERABLES = [
-  'Filme completo','Clipe teaser','Takes separados','Fine-art images',
-  'Booklet','Plantas Ilustrativas','Storyboard','Presentation',
-  'VR 360','Apresentação investidores',
+  'Filme manifesto','Filme de lançamento','Teaser','Cortes verticais',
+  'Fine-art imagery','Booklet','Assets de campanha','Imagens still',
+  'Apresentação privada','Film para stand','Filme para investidores',
+  'Pacote de comunicação','VR 360','Plantas ilustrativas',
 ];
 
 export const DEFAULT_STORY = [
