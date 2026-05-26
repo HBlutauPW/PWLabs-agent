@@ -1,0 +1,73 @@
+.nav {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 52px;
+  z-index: 90;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 4px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: background .12s, border-color .15s;
+}
+
+.btn:hover { background: var(--bg-hover); }
+
+.btn.active { background: var(--bg-hover); }
+
+.btn.active[data-color='purple'] { border-bottom-color: var(--purple-400); }
+.btn.active[data-color='teal']   { border-bottom-color: var(--teal-400); }
+.btn.active[data-color='coral']  { border-bottom-color: var(--coral-400); }
+.btn.active[data-color='blue']   { border-bottom-color: var(--blue-400); }
+.btn.active[data-color='green']  { border-bottom-color: var(--green-400); }
+
+.num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  transition: background .15s, color .15s;
+  font-family: var(--font-sans);
+}
+
+.btn.active[data-color='purple'] .num { background: var(--purple-100); color: var(--purple-500); }
+.btn.active[data-color='teal']   .num { background: var(--teal-100);   color: var(--teal-500); }
+.btn.active[data-color='coral']  .num { background: var(--coral-100);  color: var(--coral-500); }
+.btn.active[data-color='blue']   .num { background: var(--blue-100);   color: var(--blue-500); }
+.btn.active[data-color='green']  .num { background: var(--green-100);  color: var(--green-500); }
+
+.btn.done .num { background: var(--teal-100); color: var(--teal-500); }
+
+.label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.btn.active .label { color: var(--text-primary); }
+.btn.done .label   { color: var(--teal-600); }
