@@ -1,6 +1,6 @@
 export const SCENE_TYPES = {
-  T: { label: 'Território',  color: 'purple' },
-  P: { label: 'Promessa',    color: 'teal'   },
+  T: { label: 'Localização',  color: 'purple' },
+  P: { label: 'Aspiração',    color: 'teal'   },
   E: { label: 'Experiência', color: 'coral'  },
   Pr:{ label: 'Produto',     color: 'blue'   },
   C: { label: 'Convite',     color: 'green'  },
@@ -15,7 +15,7 @@ export const SCENE_OPTIONS = {
 };
 
 export const CAMERA_FNS = {
-  'Imagem aérea':              'Território / escala / raridade / exclusividade',
+  'Imagem aérea':              'Localização / escala / raridade / exclusividade',
   'Fachada hero shot':         'Identidade / arquitetura / presença / diferenciação',
   'Close de material / detalhe':'Sofisticação / qualidade / sensorialidade / valor',
   'Interior principal':        'Pertencimento / cotidiano / desejo / estilo de vida',
@@ -29,7 +29,14 @@ export const PHASES = [
     id: 0,
     eyebrow: 'Fase 1 — Anamnese estratégica',
     title: 'Diagnóstico',
-    quote: '"Antes de falarmos de imagem, queria entender como esse projeto precisa ser percebido."',
+    quote: '"Antes de falarmos de imagem, precisamos entender como esse projeto precisa ser percebido."',
+' Função da etapa
+O diagnóstico é a etapa em que o PW LABs atua como consultoria criativa.
+Antes de qualquer decisão visual, é necessário entender o contexto do projeto, o objetivo comercial, o público e o valor que precisa ser comunicado.
+Nesta etapa, o projeto ainda não é uma imagem. Ele é uma intenção a ser compreendida.
+Objetivo
+Entender o projeto antes de representá-lo'
+
     color: 'purple',
     reportLabel: 'RELATÓRIO DE DIAGNÓSTICO ESTRATÉGICO',
     reportQuote: 'Antes de falarmos de imagem, queria entender como esse projeto precisa ser percebido.',
@@ -129,8 +136,8 @@ export const PHASES = [
             opts:['Lento e contemplativo','Dinâmico e aspiracional','Sensorial e elegante','Emocional e crescente','Preciso e sofisticado'],
             alerts:{} },
           { key:'e_seq', label:'Qual estrutura narrativa?',
-            opts:['Território → Promessa → Experiência → Produto → Convite','Arquitetura → Experiência → Produto → Marca','Abertura emocional → Produto → Convite','Personalizado'],
-            alerts:{'Território → Promessa → Experiência → Produto → Convite':'👉 Estrutura padrão PW LABs — constrói percepção antes de mostrar o produto.'} },
+            opts:['Localização → Aspiração → Experiência → Produto → Convite','Arquitetura → Experiência → Produto → Marca','Abertura emocional → Produto → Convite','Personalizado'],
+            alerts:{'Localização → Aspiração → Experiência → Produto → Convite':'👉 Estrutura padrão PW LABs — constrói percepção antes de mostrar o produto.'} },
         ]
       },
       {
@@ -185,7 +192,7 @@ export const PHASES = [
             opts:['Sem pessoas — arquitetura pura','Pessoas sutis — indicam escala','Pessoas como coadjuvantes de lifestyle','Pessoas como protagonistas'],
             alerts:{'Sem pessoas — arquitetura pura':'👉 Favorece leitura técnica/editorial. Reduz calor emocional.','Pessoas como protagonistas':'👉 Casting deve refletir o público-alvo definido no diagnóstico.'} },
           { key:'d2_cam', label:'Arco narrativo visual?',
-            opts:['Exterior → interior → detalhe','Território → arquitetura → experiência → produto','Estilo de vida: pessoas + espaço','Arquitetônico puro','Editorial: cada imagem autônoma'],
+            opts:['Exterior → interior → detalhe','Localização → arquitetura → experiência → produto','Estilo de vida: pessoas + espaço','Arquitetônico puro','Editorial: cada imagem autônoma'],
             alerts:{} },
         ]
       },
