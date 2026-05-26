@@ -205,9 +205,9 @@ export const PHASES = [
 ];
 
 export const DELIVERABLES = [
-  'Filme manifesto','Teaser','Cortes verticais','Fine-art imagery',
-  'Booklet','Assets de campanha','Imagens still','Apresentação privada',
-  'Film para stand','Apresentação investidores',
+  'Filme completo','Clipe teaser','Takes separados','Fine-art images',
+  'Booklet','Plantas Ilustrativas','Storyboard','Presentation',
+  'VR 360','Apresentação investidores',
 ];
 
 export const DEFAULT_STORY = [
