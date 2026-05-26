@@ -1,11 +1,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --font-display: 'PW Centra No2', 'Calibri', sans-serif;
-  --font-sans:    'PW Centra No2', 'Calibri', sans-serif;
+  --font-display: 'PW Centra No2', 'Inter', sans-serif;
+  --font-sans:    'PW Centra No2', 'Inter', sans-serif;
 
-  --bg-app:        #262626;
-  --bg-surface:    #101010;
+  --bg-app:        #404040;
+  --bg-surface:    #262626;
   --bg-elevated:   #181818;
   --bg-hover:      #202020;
   --bg-active:     #262626;
@@ -15,8 +15,8 @@
   --border-strong:  rgba(255,255,255,0.16);
 
   --text-primary:   #F4F1EC;
-  --text-secondary: #7A7774;
-  --text-muted:     #666361;
+  --text-secondary: #969390;
+  --text-muted:     #a8a29e;
 
   --accent:       #c4b295;
   --accent-dim:   #d6b072;
