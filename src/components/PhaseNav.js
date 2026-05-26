@@ -1,7 +1,7 @@
 import styles from './PhaseNav.module.css';
 
-const LABELS = ['Diagnóstico', 'Estratégia', 'Direção', 'Storyboard', 'Relatório'];
-const COLORS = ['purple', 'teal', 'coral', 'blue', 'green'];
+const LABELS = ['Diagnóstico', 'Estratégia', 'Direção', 'Produção', 'Storyboard', 'Relatório'];
+const COLORS = ['purple', 'teal', 'coral', 'blue', 'green', 'green'];
 
 export default function PhaseNav({ current, completed, onChange }) {
   return (
