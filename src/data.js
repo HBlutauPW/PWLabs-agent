@@ -412,6 +412,35 @@ export const PHASE_BRIEFS = {
 
 };
 
+// ─── REGRAS DE REDAÇÃO DO RELATÓRIO ───────────────────────────────────────────
+// Injetar esta string no prompt de geração (em qualquer fase), junto com o
+// reportSections. É o que impede o modelo de repetir a mesma ideia em seções
+// diferentes — a causa principal do relatório longo.
+export const REPORT_RULES = `
+REGRAS DE REDAÇÃO (aplicar a todas as seções):
+
+1. DONO ÚNICO. Cada ideia-chave aparece em UMA seção só. A tese / frase de
+   desejo só na SÍNTESE e no BRIEF EMOCIONAL. O perfil do público só em
+   POSICIONAMENTO & PÚBLICO. A luz/atmosfera só no BRIEF EMOCIONAL. Notas
+   específicas do projeto (NR/escritório, ticket por m², etc.) citadas UMA vez,
+   na seção mais pertinente — nunca repetidas em alertas ou próximos passos.
+   Se uma ideia já foi dita, as outras seções no máximo a referenciam em meia
+   frase; não a reexplicam.
+
+2. DENSIDADE. Cada seção traz informação nova. Proibido parágrafo de "retomada"
+   recapitulando o que já foi escrito.
+
+3. SEM RETÓRICA EM SÉRIE. Evitar construções antitéticas repetidas do tipo
+   "não é X, é Y" / "o desafio não é A, é B" / "não compra por C, compra por D".
+   No máximo uma no relatório inteiro.
+
+4. LISTAS COM PARCIMÔNIA. Não virar bullet aquilo que já está em prosa.
+   Uma ideia = um lugar = um formato.
+
+5. TAMANHO. Frases curtas. Cortar advérbios e adjetivos decorativos que não
+   acrescentam informação.
+`;
+
 // ─── PHASES ───────────────────────────────────────────────────────────────────
 export const PHASES = [
   {
@@ -423,15 +452,12 @@ export const PHASES = [
     reportLabel: 'RELATÓRIO DE DIAGNÓSTICO ESTRATÉGICO',
     reportQuote: 'Antes de falarmos de imagem, queria entender como esse projeto precisa ser percebido.',
     reportSections: [
-      '1. SÍNTESE EXECUTIVA — tese narrativa: "Estamos falando de um projeto com posicionamento [X], para um público [Y], com decisão [Z] e valor central [V]."',
-      '2. ANÁLISE DE CONTEXTO — projeto, momento de mercado e desafio identificado.',
-      '3. POSICIONAMENTO — onde o projeto se situa no espectro aspiracional ↔ comercial.',
-      '4. DESAFIO DO NEGÓCIO — o que a comunicação visual precisa resolver.',
-      '5. PÚBLICO & DECISÃO — perfil e implicações visuais.',
-      '6. BRIEF EMOCIONAL — sensação principal, direcionamento de luz e atmosfera.',
-      '7. BENCHMARK & REFERÊNCIAS — avaliação e curadoria recomendada pelo PW LABs.',
-      '8. ALERTAS — o que ainda precisa ser confirmado.',
-      '9. PRÓXIMOS PASSOS → ESTRATÉGIA',
+      '1. SÍNTESE EXECUTIVA — tese narrativa em 3-4 frases: "Estamos falando de um projeto com posicionamento [X], para um público [Y], com decisão [Z] e valor central [V]." DONA da tese. Não detalhar público, atmosfera nem benchmark aqui — isso vem nas seções próprias.',
+      '2. POSICIONAMENTO & PÚBLICO — onde o projeto se situa no espectro aspiracional ↔ comercial, o momento de mercado e o perfil do público com suas implicações visuais. DONA do perfil do público; nenhuma outra seção o redescreve.',
+      '3. DESAFIO DO NEGÓCIO — o que a comunicação visual precisa resolver. Apenas os desafios; referenciar o público em meia frase, sem reapresentá-lo.',
+      '4. BRIEF EMOCIONAL — sensação principal e direção de luz/atmosfera. DONA da sensação-alvo e da atmosfera; é a única seção que enuncia a frase de desejo por extenso.',
+      '5. BENCHMARK & REFERÊNCIAS — avaliação do que o cliente trouxe e curadoria recomendada pelo PW LABs.',
+      '6. PRÓXIMOS PASSOS → ESTRATÉGIA — ações recomendadas. Incorporar os pontos a confirmar (antigos "alertas") como ressalva dentro do passo correspondente; sem seção separada de alertas.',
     ],
     tese: (s) => `Estamos falando de um projeto com posicionamento "${s.d_pos||'—'}", para um público "${s.d_pub||'—'}", com decisão mais "${s.d_dec||'—'}", e o valor central é "${s.d_val||'—'}".`,
     teseKeys: ['d_pos','d_pub','d_dec','d_val'],
